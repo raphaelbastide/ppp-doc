@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title=""
+    link(rel='stylesheet', href='css/style.css')
+  body
+    h1= title
+    main
+      each project in data.projects
+        section
+          h2= project.name
+          p.bio= project.bio
+            if project.p1name
+              section.p1
+                h3= project.p1name
+                p= project.p1desc
+                img(src=project.p1img)
+            if project.p2name
+              section.p2
+                h3= project.p2name
+                p= project.p2desc
+                img(src=project.p2img)
+            if project.p1name
+              section.p3
+                h3= project.p3name
+                p= project.p3desc
+                img(src=project.p3img)
