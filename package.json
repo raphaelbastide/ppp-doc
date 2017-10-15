@@ -1,0 +1,31 @@
+{
+  "name": "ppp_doc",
+  "version": "1.0.0",
+  "description": "Directory as a database starter kit.",
+  "main": "main.js",
+  "dependencies": {
+    "app": "^0.1.0",
+    "config": "^1.26.2",
+    "csvtojson": "^1.1.7",
+    "express": "^4.16.2",
+    "fs": "^0.0.1-security",
+    "js-yaml": "^3.10.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.4",
+    "stats": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelbastide/ppp-doc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelbastide/ppp-doc/issues"
+  },
+  "homepage": "https://github.com/raphaelbastide/ppp-doc#readme"
+}
