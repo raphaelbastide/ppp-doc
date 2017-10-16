@@ -8,20 +8,28 @@ html
     main
       each project in data.projects
         section
+          h1.logo
+            span.sp1= "Pre"
+            span.sp2= "Post"
+            span.sp3= "Print"
+          p.url= project.website
           h2= project.name
           p.bio= project.bio
             if project.p1name
-              section.p1
-                h3= project.p1name
-                p= project.p1desc
+              section.project.p1
+                div.text
+                  h3= project.p1name
+                  p= project.p1desc
                 img(src=project.p1img)
             if project.p2name
-              section.p2
-                h3= project.p2name
-                p= project.p2desc
+              section.project.p2
+                div.text
+                  h3= project.p2name
+                  p= project.p2desc
                 img(src=project.p2img)
             if project.p1name
-              section.p3
-                h3= project.p3name
-                p= project.p3desc
+              section.project.p3
+                div.text
+                  h3= project.p3name
+                  p= project.p3desc
                 img(src=project.p3img)
