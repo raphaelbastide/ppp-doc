@@ -25,3 +25,18 @@ html
                 h3= project.p3name
                 p= project.p3desc
                 img(src=project.p3img)
+  script.
+    var img = document.querySelectorAll('img');
+    console.log('img')
+    for (var i = 0; i < img.length; i++) {
+      var ci = img[i];
+      var iw = ci.naturalWidth;
+      var ih = ci.naturalHeight;
+      //- var fig = ci.parentNode;
+      var fig = ci;
+      if (iw <= ih) {
+        fig.classList.add('portrait');
+      }else {
+        fig.classList.add('landscape');
+      }
+    }
