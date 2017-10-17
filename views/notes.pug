@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title=""
+    link(rel='stylesheet', href='css/style.css')
+  body
+    h1= title
+    main
+      each project in data.projects
+        h2= project.name
+        p= project.slug
+        ul
+          each imgName in project.images 
+            img(src='projects/'+project.slug+'/'+imgName)

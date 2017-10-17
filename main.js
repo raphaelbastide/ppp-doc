@@ -12,18 +12,25 @@ var app = express();
 var config = require('config');
 var serverConfig = config.get("server");
 var project = config.get("project");
-
+var notes = false;
 // Use pug as the view engine
 app.set('view engine','pug');
 app.use(express.static('public'));
-app.get("/", getIndex);
+if (notes) {
+  app.get("/", getNotes);
+}else {
+   app.get("/", getIndex);
+}
 
 var jsonData = new Object();
 var projects = [];
 jsonData.projects = projects;
 
-// dirToJson('public/'+project.dirname+'/','.md');
-csvToJson('public/projects/prepostprint.csv');
+if (notes) {
+  dirToJson('public/'+project.dirname+'/','.md');
+}else {
+  csvToJson('public/projects/prepostprint.csv');
+}
 console.log(jsonData);
 
 function getIndex(req, res) {
@@ -34,7 +41,14 @@ function getIndex(req, res) {
   console.log(dataToSend);
   res.render("index", dataToSend);
 };
-
+function getNotes(req, res) {
+  var dataToSend = {
+    title: "PrePostPrint",
+    data: jsonData
+  }
+  console.log(dataToSend);
+  res.render("notes", dataToSend);
+};
 function dirToJson(startPath,filter){
   if (!fs.existsSync(startPath)){
     console.log("no .md");
